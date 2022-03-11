@@ -3,7 +3,7 @@ Wireless communication project at Université Côte d'Azur. \
 Project members :
 * DALMASSO Louis [(MazeWave)](https://github.com/MazeWave)
 * LARGANGE Ryan [(0K)](https://github.com/fruxode)
-* NATHAN Théo [(LeBossLamatoz196)](https://github.com/LeBossLamatoz196)   
+* NATHAN Théo [(EauFroide)](https://github.com/EauFroide)   
 
 ## Features :
 > * 13.56MHz RFID Reader
