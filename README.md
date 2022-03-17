@@ -2,7 +2,7 @@
 Wireless communication project at Université Côte d'Azur. \
 Project members :
 * DALMASSO Louis [(MazeWave)](https://github.com/MazeWave)
-* LARGANGE Ryan [(0K)](https://github.com/fruxode)
+* LARGANGE Ryan [(0K)](https://github.com/kryonor)
 * NATHAN Théo [(EauFroide)](https://github.com/EauFroide)   
 
 ## Features :
