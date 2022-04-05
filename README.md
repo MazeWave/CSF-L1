@@ -1,4 +1,4 @@
-# CSF-L1
+# CSF-L1 |Valuence
 Wireless communication project at Université Côte d'Azur. \
 Project members :
 * DALMASSO Louis [(MazeWave)](https://github.com/MazeWave)
