@@ -9,4 +9,19 @@ header {
     margin: 3% 3%;
     padding: 3em;
     border-radius: 1em;
+    color: white;
+    text-align: center;
+}
+
+.container {
+
+}
+
+.container-fluid {
+    background-color: #363636;
+    width: 94%;
+    height: 5%;
+    margin: 3% 3%;
+    padding: 3em;
+    border-radius: 1em;
 }
