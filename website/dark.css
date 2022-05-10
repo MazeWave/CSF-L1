@@ -1,0 +1,12 @@
+body {
+    background-color: #262626;
+}
+
+header {
+    background-color: #363636;
+    width: 94%;
+    height: 5%;
+    margin: 3% 3%;
+    padding: 3em;
+    border-radius: 1em;
+}
