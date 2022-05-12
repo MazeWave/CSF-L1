@@ -21,6 +21,12 @@ header {
     text-align: center;
     min-width: 80%;
     z-index: 1;
+    justify-content: center;
+    display: grid;
+}
+
+.btn-header {
+    width: min-content;
 }
 
 /* Flou (a mettre en fond de box avec une opacité de 50%) /!\ Il ne faut pas flouter le texte /!\ */
@@ -61,7 +67,7 @@ h3 {
     padding-left: 2em;
     padding-right: 2em;
     padding-bottom: 0.7em;
-    margin: 0 1em -1em 0;
+    margin: 0 1em 1em 0;
 }
 
 .col-sm-12 {
