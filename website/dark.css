@@ -64,14 +64,15 @@ h3 {
     margin: 0 1em -1em 0;
 }
 
-.col-sm {
-    width: auto;
+.col-sm-12 {
+    margin: auto;
     background-color: #525252;
     border-radius: 1em;
     padding-left: 2em;
     padding-right: 2em;
     padding-bottom: 0.7em;
-    margin: 0 1em -1em 0;
+    margin: 0 1em 1em 0;
+    max-height: 50em;
 }
 
 .row {
