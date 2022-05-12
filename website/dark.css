@@ -15,8 +15,7 @@ header {
     position: fixed;
     opacity: 100%;
     background-color: #363636;
-    margin: 1.5% 1.5%;
-    padding: 1em;
+    margin: 1em 1em;
     border-radius: 1em;
     color: white;
     text-align: center;
@@ -41,17 +40,6 @@ h3 {
 }
 
 /* Bootstrap */
-.col-sm-4{
-    background-color: #525252;
-    border-radius: 1em;
-    min-width: 20%;
-    max-width: 30%;
-    padding-left: 2em;
-    padding-right: 2em;
-    padding-bottom: 0.7em;
-    margin: 0em 2em 0em -1em;
-    filter: blur(0px);
-}
 
 .col-sm-1 {
     width: auto;
@@ -65,23 +53,40 @@ h3 {
     padding-bottom: 0.7em;
 }
 
-.col-xl-4{
-    background-color: #525252;
-    border-radius: 1em;
+.col-sm-4 {
     min-width: 20%;
     max-width: 30%;
+    background-color: #525252;
+    border-radius: 1em;
     padding-left: 2em;
     padding-right: 2em;
     padding-bottom: 0.7em;
-    margin: 0em 2em 0em -1em;
-    filter: blur(0px);
+    margin: 0 1em -1em 0;
+}
+
+.col-sm {
+    width: auto;
+    background-color: #525252;
+    border-radius: 1em;
+    padding-left: 2em;
+    padding-right: 2em;
+    padding-bottom: 0.7em;
+    margin: 0 1em -1em 0;
+}
+
+.row {
+    width: auto;
+    padding: 1em;
 }
 
 .container {
     width: auto;
+    padding-bottom: 1em;
 }
 
 .container-fluid {
+    margin: 1em;
     background-color: #363636;
     border-radius: 1em;
+    padding-bottom: 1em;
 }
