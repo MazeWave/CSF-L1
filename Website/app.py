@@ -1,20 +1,27 @@
-from flask import *
+import flask    as flk
+import sqlite3  as sql
+import requests as req
 
-app = Flask(__name__, template_folder='./')
+app = flk.Flask(__name__, template_folder='./')
+con = sql.connect("./data")
+mem = sql.connect(":memory:")
 
 @app.route("/")
 def get_index():
-    return render_template('web.html', page="Home")
+    return flk.render_template('web.html', page="Home")
 
 @app.route("/stats")
 def get_stats():
-    return render_template('web.html', page='Stats')
+    return flk.render_template('web.html', page='Stats')
 
 @app.route("/logs")
 def get_console():
-    return render_template('web.html', page='Logs')
+    return flk.render_template('web.html', page='Logs')
+
 
 
 if __name__ == '__main__':
     app.run(host="localhost", port=3000, debug=True)
+    con.close()
+    mem.close()
 
