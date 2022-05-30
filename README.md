@@ -8,7 +8,7 @@ Project members :
 ## Features :
 > * 2x HC-SR04 Ultrasonic Sensors
 > * 2x UCA Arduino boards
-> * 1 dedicated VPS
+> * 1 dedicated VPS : Receives via MQTT continuous reports from the dispatched boards and hosts the webserver that displays them.
 
 ## Description :
 > This project aims to create an automatic traffic tracking device at the accesses of the Valrose University. \
