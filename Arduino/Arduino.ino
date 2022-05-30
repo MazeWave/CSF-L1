@@ -13,9 +13,9 @@ TODO
 #include <SPI.h>
 
 // LoRaWAN end-device
-static const u4_t DEVADDR = 0x260B3C6E;
-static const PROGMEM u1_t NWKSKEY[16] = {  0xD6, 0xBC, 0x58, 0xF3, 0x14, 0xDB, 0x97, 0xB0, 0x24, 0x0A, 0x54, 0xA5, 0xAC, 0x3E, 0xA0, 0xE2 };
-static const u1_t PROGMEM APPSKEY[16] = {  0x25, 0x4B, 0x5A, 0xF7, 0x9D, 0x57, 0xA9, 0xC0, 0x30, 0x8A, 0x5E, 0x3E, 0x3B, 0x9B, 0xEE, 0x96 };
+static const u4_t DEVADDR = FILL_IN;
+static const PROGMEM u1_t NWKSKEY[16] = {  FILL_IN };
+static const u1_t PROGMEM APPSKEY[16] = {  FILL_IN };
 
 void os_getArtEui (u1_t* buf) { }
 void os_getDevEui (u1_t* buf) { }
@@ -129,6 +129,7 @@ void setup()
   pinMode(trigPin, OUTPUT);
   pinMode(echoPin, INPUT);
   Serial.begin(9600);
+  digitalWrite(trigPin, LOW);
   os_init();
   LMIC_reset();
   LMIC_setClockError(MAX_CLOCK_ERROR * 2 / 100);
@@ -209,5 +210,5 @@ int mesure_distance()
   delayMicroseconds(10);
   digitalWrite(trigPin, LOW);
   duration = pulseIn(echoPin, HIGH);
-  return (duration * 0.034 / 2);
+  return (int) (duration * 0.034 / 2);
 }

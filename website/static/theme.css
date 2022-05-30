@@ -126,6 +126,10 @@ button:hover {
     color: var(--FONT)
 }
 
+.logline {
+    font-family: 'Courier New';
+}
+
 #icon {
     cursor: pointer;
 }

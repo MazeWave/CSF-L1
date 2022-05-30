@@ -54,7 +54,7 @@
     </header>
 
     <div>
-        <div class="container" style="margin-top: 10em; margin-top: 10em;left: 7%;position: relative;">
+        <div class="container" style="margin-top: 10em; margin-top: 10em;left: 7%;position: relative; width:85%">
             <div class="col-sm-1">
                 {% if page == 'Home'  %}
                     <h1>Valuence, c'est quoi ?</h1>
@@ -71,11 +71,12 @@
                 </ul>
                 {% elif page == 'Stats' %}
                     <h1>Aujourd'hui</h1>
+                    <h2>{{ total }} entrées ont été détectées</h2>
                 {% elif page == 'Logs' %}
                     <h1>Logs</h1>
                     <ul>
                         {% for line in logdata %}
-                        <span class="logline">{{ line }}</p>
+                        <p class="logline">{{ line }}</p>
                         {% endfor %}
                     </ul>
                 {% else %}
