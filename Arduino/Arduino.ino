@@ -13,24 +13,25 @@ TODO
 #include <SPI.h>
 
 // LoRaWAN end-device
-static const u4_t DEVADDR = 0x260B5B5B;
-static const PROGMEM u1_t NWKSKEY[16] = {  0x64, 0xA5, 0x1C, 0xDB, 0x42, 0x98, 0x3B, 0x58, 0xBD, 0x04, 0x3A, 0x8A, 0xB7, 0x55, 0xD6, 0x934 };
-static const u1_t PROGMEM APPSKEY[16] = {  0x26, 0xF3, 0xCD, 0x26, 0x7B, 0xDC, 0x7A, 0xD5, 0xFA, 0x9A, 0x88, 0x66, 0xB6, 0xD3, 0x15, 0x28 };
+static const u4_t DEVADDR = 0x260B3C6E;
+static const PROGMEM u1_t NWKSKEY[16] = {  0xD6, 0xBC, 0x58, 0xF3, 0x14, 0xDB, 0x97, 0xB0, 0x24, 0x0A, 0x54, 0xA5, 0xAC, 0x3E, 0xA0, 0xE2 };
+static const u1_t PROGMEM APPSKEY[16] = {  0x25, 0x4B, 0x5A, 0xF7, 0x9D, 0x57, 0xA9, 0xC0, 0x30, 0x8A, 0x5E, 0x3E, 0x3B, 0x9B, 0xEE, 0x96 };
 
 void os_getArtEui (u1_t* buf) { }
 void os_getDevEui (u1_t* buf) { }
 void os_getDevKey (u1_t* buf) { }
 
-static uint8_t mydata[3] = "+1";
+static uint8_t mydata[] = {1, 0};
 static osjob_t sendjob;
-// const unsigned TX_INTERVAL = 30;
+const unsigned TX_INTERVAL = 30;
 
-#define echoPin 2
-#define trigPin 3
+#define echoPin 3
+#define trigPin 2
 
 long duration;
 int distance;
 int exdistance;
+byte motions;
 
 const lmic_pinmap lmic_pins = {
     .nss = 10,
@@ -85,7 +86,7 @@ void onEvent (ev_t ev) {
               Serial.println("");
             }
             
-            //os_setTimedCallback(&sendjob, os_getTime()+sec2osticks(TX_INTERVAL), do_send);
+            os_setTimedCallback(&sendjob, os_getTime()+sec2osticks(TX_INTERVAL), do_send);
             break;
         case EV_LOST_TSYNC:
             Serial.println(F("EV_LOST_TSYNC"));
@@ -114,8 +115,10 @@ void do_send(osjob_t* j){
         Serial.println(F("OP_TXRXPEND, not sending"));
     } else {
         // Prepare upstream data transmission at the next possible time.
+        mydata[1] = motions;
         LMIC_setTxData2(1, mydata, sizeof(mydata)-1, 0);
         Serial.println(F("Packet queued"));
+        motions = 0;
     }
     // Next TX is scheduled after TX_COMPLETE event.
 }
@@ -125,7 +128,7 @@ void setup()
 {
   pinMode(trigPin, OUTPUT);
   pinMode(echoPin, INPUT);
-  Serial.begin(115200);
+  Serial.begin(9600);
   os_init();
   LMIC_reset();
   LMIC_setClockError(MAX_CLOCK_ERROR * 2 / 100);
@@ -183,58 +186,28 @@ void setup()
 
 void loop()
 {
-  digitalWrite(trigPin, LOW);
-  delayMicroseconds(2);
-
-  digitalWrite(trigPin, HIGH);
-  delayMicroseconds(10);
-  digitalWrite(trigPin, LOW);
-
-  exdistance = distance;
-  duration = pulseIn(echoPin, HIGH);
-  int temp = duration * 0.034 / 2;
-  if (temp >= 120 or temp == 0) return;
-  distance = temp;
-
-  Serial.print("Distance: ");
-  Serial.print(distance);
-  Serial.println(" cm");
-  if (exdistance - distance >= 30) {
-    Serial.println(">> +1 <<");
-    do_send(&sendjob);
+  int temp = mesure_distance();
+  if (not (temp >= 120 or temp == 0))
+  {
+    exdistance = distance;
+    distance = temp;
+    if (exdistance/distance >= 2.1) motions++;
   }
+
+  Serial.print("HC-SR04 : ");
+  Serial.print(temp);
+  Serial.println(" cm");
+  
   os_runloop_once();
 }
 
-/*
-#include <SPI.h>
-#include <MFRC522.h>
-
-#define SS_PIN  10
-#define RST_PIN 9
-
-MFRC522 rfid(SS_PIN, RST_PIN);
-
-void setup()
+int mesure_distance()
 {
-  Serial.begin(9600);
-  while (!Serial);
-  SPI.begin();
-  rfid.PCD_Init();
-  delay(4);
-  rfid.PCD_DumpVersionToSerial();
+  digitalWrite(trigPin, LOW);
+  delayMicroseconds(2);
+  digitalWrite(trigPin, HIGH);
+  delayMicroseconds(10);
+  digitalWrite(trigPin, LOW);
+  duration = pulseIn(echoPin, HIGH);
+  return (duration * 0.034 / 2);
 }
-
-void loop()
-{
-  if ( ! rfid.PICC_IsNewCardPresent()) {
-    return;
-  }
-
-  if ( ! rfid.PICC_ReadCardSerial()) {
-    return;
-  }
-
-  rfid.PICC_DumpToSerial(&(rfid.uid));
-}
-*/
