@@ -6,13 +6,11 @@ Project members :
 * NATHAN Théo [(EauFroide)](https://github.com/EauFroide)   
 
 ## Features :
-> * 2x 13.56MHz RFID Reader (Entrance and Exit)
-> * Raspberry Pi
-> * Arduino
-> * Virtual Private Server
+> * 2x HC-SR04 Ultrasonic Sensors
+> * 2x UCA Arduino boards
+> * 1 dedicated VPS
 
 ## Description :
-> This project aims to create an automatic authentification device at the entrance of the Valrose University. \
+> This project aims to create an automatic traffic tracking device at the accesses of the Valrose University. \
 > The device records the date and time of the students' entrances and exits to provide useful insight about traffic to a dedicated server. \
 > Said insight can be accessed by the administration for security or statistic purposes through a web interface hosted by MazeWave™.
-> https://docs.google.com/document/d/13l5iGz6zwZqAma487YsQUeJ8oNH9ffdEU8dYUxMK6iE/edit?usp=sharing
