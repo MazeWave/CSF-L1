@@ -1,4 +1,4 @@
-# CSF-L1 | Valuence
+# Valuence | CSF-L1
 Wireless communication project at Université Côte d'Azur. \
 Project members :
 * DALMASSO Louis [(MazeWave)](https://github.com/MazeWave)
