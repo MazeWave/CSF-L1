@@ -20,3 +20,6 @@ Project members :
 ![image](https://user-images.githubusercontent.com/25009364/171078690-8e1882ba-4e79-49ca-86de-6bef0ce6bc24.png)
 ![image](https://user-images.githubusercontent.com/25009364/171078775-5e9bb979-92e9-477b-81a1-1a60342c86e4.png)
 ![image](https://user-images.githubusercontent.com/25009364/171078796-cde42ddb-bfdd-49bb-8089-9a2b2a163a1f.png)
+
+## Proximity sensor in action
+![image](https://user-images.githubusercontent.com/25009364/171079067-7e6bfbae-16fa-48de-a540-e4b44995db04.png)
