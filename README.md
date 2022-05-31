@@ -14,3 +14,5 @@ Project members :
 > This project aims to create an automatic traffic tracking device at the accesses of the Valrose University. \
 > The device records the date and time of the students' entrances and exits to provide useful insight about traffic to a dedicated server. \
 > Said insight can be accessed by the administration for security or statistic purposes through a web interface hosted by MazeWave™.
+
+## Website previews
