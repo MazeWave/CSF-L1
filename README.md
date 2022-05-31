@@ -15,6 +15,14 @@ Project members :
 > The device records the date and time of the students' entrances and exits to provide useful insight about traffic to a dedicated server. \
 > Said insight can be accessed by the administration for security or statistic purposes through a web interface hosted by MazeWave™.
 
+## Distribution of tasks
+* Back-end : Largange Ryan
+* Front-end : Dalmasso Louis
+* Algorithms : Nathan Théo
+* Database and hosting : Dalmasso Louis
+* Hardware : Largange Ryan et Nathan Théo
+
+
 ## Website previews
 ![vlc_Q8uT9tNsnL](https://user-images.githubusercontent.com/25009364/171078643-d3ccb8f7-946c-4a44-b491-1642a8b3bd00.png)
 ![image](https://user-images.githubusercontent.com/25009364/171078690-8e1882ba-4e79-49ca-86de-6bef0ce6bc24.png)
