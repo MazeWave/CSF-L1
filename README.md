@@ -31,3 +31,9 @@ Project members :
 
 ## Proximity sensor in action
 ![image](https://user-images.githubusercontent.com/25009364/171079067-7e6bfbae-16fa-48de-a540-e4b44995db04.png)
+![image](https://user-images.githubusercontent.com/25009364/171079575-b3bd4db4-c2c4-4aa8-8e7f-4ad76a9981a1.png)
+![image](https://user-images.githubusercontent.com/25009364/171079599-eb6209f4-3795-4b9c-a53d-467534e6be48.png)
+![image](https://user-images.githubusercontent.com/25009364/171079625-baa5d799-d294-4f89-8eaa-7d4bfa3c40dd.png)
+
+## TTN Payload
+![image](https://user-images.githubusercontent.com/25009364/171079669-915a161b-5e29-46cc-b2a4-54bb1b66e8c0.png)
